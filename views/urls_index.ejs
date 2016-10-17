@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+  <header>
+		<% include ../views/partials/_headers %>
+	</header>
+
+  <main>
+    <h1>The web's "best site" to shorten your URLs </h1>
+
+    <ul>
+      <% for(key in urls) { %>
+        <li>
+          <form method="POST" action="/urls/<%= key %>/delete">
+            <%= key %> → <%= urls[key] %>
+            <a href="/urls/<%= key %>"> Edit</a>
+            <input type="submit" value="Click to Delete"></input>
+          </form><br>
+        </li>
+      <% } %>
+    </ul>
+    <p> Create a new <a href="/urls/new"> shortURL</a> here!</p>
+
+  </main>
+
+</body>
+</html>

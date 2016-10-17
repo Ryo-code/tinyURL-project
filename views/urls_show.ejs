@@ -1,0 +1,16 @@
+<!-- This is an EJS template, where I'll display the shortURL -->
+
+<article>
+  <header>
+    <font size="6">
+    <br>
+    <p>ShortURL: <b> <%= shortURL %></b> </p> </font>
+
+    <p>What URL would you like to shorten?</p>
+    <form method="POST" action="/urls/<%= shortURL %>/update">
+      <input type="text" value="<%= longURL %>" name="longURL[]"></input>
+      <input type="submit" value="Update"></input>
+    </form>
+  </header>
+
+</article>
